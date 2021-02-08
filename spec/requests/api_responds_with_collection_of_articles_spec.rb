@@ -1,5 +1,7 @@
 RSpec.describe 'GET /api/articles', type: :request do
   describe 'successfully' do
+    let!(:articles) { 3.times { create(:article, title: 'This is an awesome title') } }
+
     before do
       get '/api/articles'
     end
