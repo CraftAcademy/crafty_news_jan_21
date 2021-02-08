@@ -5,6 +5,7 @@ class Api::ArticlesController < ApplicationController
   end
 
   def show
-    
+    article_from_database = Article.find(params['id'])
+    render json: { article: article_from_database }
   end
 end
